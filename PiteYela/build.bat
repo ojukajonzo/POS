@@ -9,13 +9,9 @@ if errorlevel 1 (
     python -m pip install pyinstaller
 )
 
-REM Build the executable
-REM Note: If logo.ico doesn't exist, remove --icon parameter
-if exist assets\logo.ico (
-    python -m PyInstaller --onefile --windowed --name "AlcoholPOS" --icon=assets/logo.ico app/main.py
-) else (
-    python -m PyInstaller --onefile --windowed --name "AlcoholPOS" app/main.py
-)
+REM Build the executable using the spec file
+echo Building with spec file...
+python -m PyInstaller AlcoholPOS.spec
 
 if errorlevel 1 (
     echo Build failed!

@@ -106,6 +106,7 @@ def init_db() -> None:
                 quantity INTEGER NOT NULL,
                 unit_price REAL NOT NULL,
                 line_total REAL NOT NULL,
+                milliliters INTEGER DEFAULT 0,
                 FOREIGN KEY (sale_id) REFERENCES sales(id) ON DELETE CASCADE,
                 FOREIGN KEY (product_id) REFERENCES products(id)
             )
@@ -140,6 +141,19 @@ def init_db() -> None:
         conn.rollback()
         print(f"Database initialization error: {e}")
         raise
+    finally:
+        conn.close()
+
+    # Ensure old databases have the milliliters column on sale_items
+    conn = get_connection()
+    try:
+        cursor = conn.cursor()
+        try:
+            cursor.execute("ALTER TABLE sale_items ADD COLUMN milliliters INTEGER DEFAULT 0")
+            conn.commit()
+        except sqlite3.OperationalError:
+            # Column already exists or table missing; ignore
+            pass
     finally:
         conn.close()
 

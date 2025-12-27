@@ -11,7 +11,7 @@ APP_VERSION = "1.0.0"
 
 # Get user's Documents folder
 DOCUMENTS_FOLDER = Path.home() / "Documents"
-BASE_DIR = DOCUMENTS_FOLDER / "AlcoholPOS"
+BASE_DIR = DOCUMENTS_FOLDER / "PiteYela_PoS"
 DATA_DIR = BASE_DIR / "data"
 DB_PATH = DATA_DIR / "pos.db"
 

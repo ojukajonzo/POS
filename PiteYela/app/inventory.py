@@ -112,6 +112,7 @@ class ProductDialog(QDialog):
         if product:
             self.name_input.setText(product.name)
             self.description_input.setPlainText(product.description)
+            self.milliliters_input.setValue(product.milliliters)
             self.cost_price_input.setValue(product.cost_price)
             self.selling_price_input.setValue(product.selling_price)
             self.quantity_input.setValue(product.quantity_stocked)
@@ -122,6 +123,7 @@ class ProductDialog(QDialog):
             'id': self.id_input.text().strip(),
             'name': self.name_input.text().strip(),
             'description': self.description_input.toPlainText().strip(),
+            'milliliters': self.milliliters_input.value(),
             'cost_price': self.cost_price_input.value(),
             'selling_price': self.selling_price_input.value(),
             'quantity_stocked': self.quantity_input.value()

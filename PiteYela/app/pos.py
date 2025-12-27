@@ -389,7 +389,16 @@ class POSWindow(QWidget):
             if sale_data:
                 settings = load_settings()
                 printer_type = settings.get("printer", {}).get("type", "file")
-                print_receipt(sale_data, printer_type=printer_type)
+                # Print in a background thread to avoid blocking the UI
+                import threading
+
+                def _print_async(data, ptype):
+                    try:
+                        print_receipt(data, printer_type=ptype)
+                    except Exception as _e:
+                        print(f"Receipt printing error (background): {_e}")
+
+                threading.Thread(target=_print_async, args=(sale_data, printer_type), daemon=True).start()
         except Exception as e:
             # Don't block on receipt printing errors
             print(f"Receipt printing error: {e}")

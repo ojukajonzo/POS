@@ -170,9 +170,16 @@ def create_sale(cashier_id: int, cashier_name: str, items: List[Dict]) -> Option
             """, (sale_id, item['product_id'], item['product_name'], 
                   item['quantity'], item['unit_price'], item['line_total'], milliliters))
         
-        # Update inventory for all items (this is already optimized with transactions)
+
+        # Update inventory for all items using the same DB connection/cursor
+        # to avoid SQLite "database is locked" errors from parallel connections.
         for item in items:
-            update_inventory_after_sale(item['product_id'], item['quantity'])
+            cursor.execute("""
+                UPDATE products
+                SET quantity_sold = quantity_sold + ?,
+                    updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?
+            """, (item['quantity'], item['product_id']))
         
         conn.commit()
         return sale_id

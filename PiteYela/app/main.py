@@ -124,7 +124,14 @@ def main():
     # Load stylesheet
     try:
         from pathlib import Path
-        stylesheet_path = Path(__file__).parent.parent / "assets" / "styles.qss"
+        # Handle both development and PyInstaller bundle paths
+        if getattr(sys, 'frozen', False):
+            # Running as bundled executable
+            bundle_dir = Path(sys._MEIPASS)
+            stylesheet_path = bundle_dir / "assets" / "styles.qss"
+        else:
+            # Running from source
+            stylesheet_path = Path(__file__).parent.parent / "assets" / "styles.qss"
         if stylesheet_path.exists():
             with open(stylesheet_path, 'r', encoding='utf-8') as f:
                 app.setStyleSheet(f.read())

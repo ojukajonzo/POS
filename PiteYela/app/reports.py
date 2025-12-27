@@ -333,7 +333,7 @@ class ReportsWindow(QWidget):
             from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
             from reportlab.lib.styles import getSampleStyleSheet
             from reportlab.lib import colors
-            from app.config import SHOP_NAME
+            from app.config import SHOP_NAME, SHOP_LOCATION, SHOP_CONTACT
             
             filename, _ = QFileDialog.getSaveFileName(
                 self, "Export to PDF", "", "PDF Files (*.pdf)"
@@ -349,11 +349,11 @@ class ReportsWindow(QWidget):
             elements = []
             styles = getSampleStyleSheet()
             
-            # Title
+            # Title and shop info
             title = Paragraph(f"<b>{SHOP_NAME} - Sales Report</b>", styles['Title'])
             elements.append(title)
-            elements.append(location)
-            elements.append(contact)
+            elements.append(Paragraph(str(SHOP_LOCATION or ""), styles['Normal']))
+            elements.append(Paragraph(str(SHOP_CONTACT or ""), styles['Normal']))
             elements.append(Spacer(1, 12))
             
             # Date range
