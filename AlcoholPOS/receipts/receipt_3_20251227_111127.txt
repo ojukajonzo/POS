@@ -1,0 +1,20 @@
+==================================================
+  Pite yela House of Wine
+  Location: Juba road Opp Jokis Garage, Lira
+  Contact: 0392158188
+==================================================
+Date: 2025-12-27 19:11:05
+Cashier: Administrator
+Receipt #: 3
+--------------------------------------------------
+Item                    MLs   Qty      Price      Total
+--------------------------------------------------
+Jack Daniel's             -     1 UGX 110,000 UGX 110,000
+----------------------------------------
+GRAND TOTAL:                   UGX 110,000
+========================================
+
+18+ Alcohol Warning: This product contains alcohol. Must be 18+ to purchase.
+
+Thank you for your purchase!
+========================================

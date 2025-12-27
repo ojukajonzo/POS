@@ -1,0 +1,187 @@
+/* Stylesheet for PiteYelaHouseofWine_POS System */
+
+QMainWindow, QWidget, QDialog {
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+QPushButton {
+    background-color: white;
+    color: black;
+    border: 2px solid #000000;
+    padding: 8px 16px;
+    border-radius: 0px;
+    font-size: 12px;
+    min-height: 30px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #f0f0f0;
+    border: 2px solid #000000;
+    color: black;
+}
+
+QPushButton:pressed {
+    background-color: #e0e0e0;
+    border: 2px solid #000000;
+}
+
+QPushButton:disabled {
+    background-color: #f5f5f5;
+    border: 2px solid #cccccc;
+    color: #999999;
+}
+
+QLineEdit, QSpinBox, QDoubleSpinBox, QTextEdit {
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 0px;
+    font-size: 12px;
+    background-color: white;
+    color: black;
+}
+
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QTextEdit:focus {
+    border: 2px solid #000000;
+    background-color: white;
+}
+
+QTableWidget {
+    border: 2px solid #ccc;
+    gridline-color: #e0e0e0;
+    background-color: white;
+    selection-background-color: #e0e0e0;
+    border-radius: 0px;
+    color: black;
+}
+
+QTableWidget::item {
+    padding: 4px;
+    border: none;
+    color: black;
+}
+
+QTableWidget::item:selected {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+QGroupBox {
+    font-weight: bold;
+    border: 2px solid #ccc;
+    border-radius: 0px;
+    margin-top: 10px;
+    padding-top: 10px;
+    background-color: white;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    background-color: white;
+    color: black;
+}
+
+QLabel {
+    font-size: 12px;
+    background-color: white;
+    border: none;
+    padding: 2px;
+    color: black;
+}
+
+QTabWidget::pane {
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 0px;
+}
+
+QTabBar::tab {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    color: black;
+}
+
+QTabBar::tab:selected {
+    background-color: white;
+    border-bottom: 2px solid #000000;
+    color: black;
+}
+
+QTabBar::tab:hover {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+QComboBox {
+    border: 2px solid #ccc;
+    border-radius: 0px;
+    padding: 6px;
+    background-color: white;
+    color: black;
+}
+
+QComboBox:hover {
+    border: 2px solid #000000;
+}
+
+QComboBox:focus {
+    border: 2px solid #000000;
+    background-color: white;
+}
+
+QDateEdit {
+    border: 2px solid #ccc;
+    border-radius: 0px;
+    padding: 6px;
+    background-color: white;
+    color: black;
+}
+
+QDateEdit:hover {
+    border: 2px solid #000000;
+}
+
+QDateEdit:focus {
+    border: 2px solid #000000;
+    background-color: white;
+}
+
+QScrollBar:vertical {
+    border: 1px solid #ccc;
+    background: white;
+    width: 15px;
+    border-radius: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #000000;
+    min-height: 20px;
+    border-radius: 0px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #333333;
+}
+
+QScrollBar:horizontal {
+    border: 1px solid #ccc;
+    background: white;
+    height: 15px;
+    border-radius: 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #000000;
+    min-width: 20px;
+    border-radius: 0px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #333333;
+}

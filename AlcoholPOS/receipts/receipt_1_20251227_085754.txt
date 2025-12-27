@@ -1,0 +1,19 @@
+========================================
+  POS Store
+========================================
+Date: 2025-12-27 16:57:10
+Cashier: Administrator
+Receipt #: 1
+----------------------------------------
+Item                   Qty      Price      Total
+----------------------------------------
+Amarula Cream            2 UGX 70,000 UGX 140,000
+Jack Daniel's            4 UGX 110,000 UGX 440,000
+----------------------------------------
+GRAND TOTAL:                   UGX 580,000
+========================================
+
+18+ Alcohol Warning: This product contains alcohol. Must be 18+ to purchase.
+
+Thank you for your purchase!
+========================================

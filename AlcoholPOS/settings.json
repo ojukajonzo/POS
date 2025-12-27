@@ -1,0 +1,20 @@
+{
+  "printer": {
+    "type": "file",
+    "usb_vendor_id": "",
+    "usb_product_id": "",
+    "serial_port": "COM1",
+    "baudrate": 9600
+  },
+  "barcode": {
+    "scanner_type": "keyboard",
+    "prefix": "",
+    "suffix": "\n"
+  },
+  "shop": {
+    "name": "Pite Yela",
+    "address": "Lira, Kakoge",
+    "phone": "+256782795666",
+    "email": "ojukajonzo@proton.me"
+  }
+}
